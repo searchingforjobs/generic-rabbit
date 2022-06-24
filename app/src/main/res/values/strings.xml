@@ -1,0 +1,13 @@
+<resources>
+	<string name="app_name" translatable="false">Vitaland</string>
+	<string name="title_login">Login</string>
+	<string name="title_home">Home</string>
+	<string name="title_profile">Dashboard</string>
+	<string name="title_notifications">Notifications</string>
+	<string name="profile_item_button_action">Action</string>
+	<string name="edit_profile_title">Edit profile</string>
+	<string name="edit_profile_first_name_label">First name</string>
+	<string name="edit_profile_last_name_label">Last name</string>
+	<string name="edit_profile_patronymic_label">Patronymic</string>
+	<string name="edit_profile_button_apply">Apply</string>
+</resources>

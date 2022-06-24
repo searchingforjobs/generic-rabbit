@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/mobile_navigation"
+	app:startDestination="@+id/navigation_login">
+
+	<action
+		android:id="@+id/action_global_profile"
+		app:destination="@id/navigation_profile" />
+
+	<fragment
+		android:id="@+id/navigation_login"
+		android:name="wj.genericrabbit.app.ui.login.LoginFragment"
+		android:label="@string/title_login"
+		tools:layout="@layout/fragment_login" />
+
+	<fragment
+		android:id="@+id/navigation_home"
+		android:name="wj.genericrabbit.app.ui.home.HomeFragment"
+		android:label="@string/title_home"
+		tools:layout="@layout/fragment_home" />
+
+	<fragment
+		android:id="@+id/navigation_profile"
+		android:name="wj.genericrabbit.app.ui.profile.ProfileFragment"
+		android:label="@string/title_profile"
+		tools:layout="@layout/fragment_profile">
+		<action
+			android:id="@+id/action_profileFragment_to_editProfileFragment"
+			app:destination="@+id/navigation_edit_profile" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/navigation_notifications"
+		android:name="wj.genericrabbit.app.ui.notifications.NotificationsFragment"
+		android:label="@string/title_notifications"
+		tools:layout="@layout/fragment_notifications" />
+
+	<dialog
+		android:id="@+id/navigation_edit_profile"
+		android:name="wj.genericrabbit.app.ui.profile.edit.EditProfileFragment"
+		android:label="@string/edit_profile_title"
+		tools:layout="@layout/bottom_sheet_edit_profile"></dialog>
+
+</navigation>
