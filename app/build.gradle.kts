@@ -4,7 +4,7 @@ plugins {
 	kotlin("kapt")
 	id("dagger.hilt.android.plugin")
 	id("androidx.navigation.safeargs.kotlin")
-	id("com.google.devtools.ksp") version "1.6.21-1.0.5"
+	id("com.google.devtools.ksp") version "1.7.0-1.0.6"
 }
 
 val androidGradleVersion: String by rootProject.extra
@@ -15,7 +15,7 @@ android {
 	compileSdk = 32
 
 	defaultConfig {
-		applicationId = "wj.genericrabbit.vitaland"
+		applicationId = "wj.genericrabbit.app"
 		minSdk = 21
 		targetSdk = 32
 		versionCode = 1
@@ -67,8 +67,8 @@ dependencies {
 	implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
 
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
-	implementation("androidx.appcompat:appcompat:1.4.1")
-	implementation("com.google.android.material:material:1.6.0")
+	implementation("androidx.appcompat:appcompat:1.4.2")
+	implementation("com.google.android.material:material:1.6.1")
 	implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 	implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
 	implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
