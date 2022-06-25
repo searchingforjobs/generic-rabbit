@@ -17,10 +17,10 @@ interface IncidentsApi {
 	@POST("incidents")
 	suspend fun createIncident(
 		@Part("file") file: MultipartBody.Part,
-		@Part securityId: RequestBody,
-		@Part firstName: RequestBody,
-		@Part middleName: RequestBody,
-		@Part lastName: RequestBody,
-		@Part description: RequestBody
+		@Part("securityId") securityId: RequestBody,
+		@Part("firstname") firstName: RequestBody,
+		@Part("middlename") middleName: RequestBody,
+		@Part("lastname") lastName: RequestBody,
+		@Part("description") description: RequestBody
 	)
 }
