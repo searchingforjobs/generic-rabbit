@@ -10,5 +10,5 @@ data class Incident(
 	val photoUrl: String,
 	val description: String,
 	val createdAt: LocalDateTime,
-	val updatedAt: LocalDateTime
+	val updatedAt: LocalDateTime = createdAt
 )

@@ -1,6 +1,7 @@
 package wj.genericrabbit.app.data.network
 
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -16,10 +17,10 @@ interface IncidentsApi {
 	@POST("incidents")
 	suspend fun createIncident(
 		@Part("file") file: MultipartBody.Part,
-		@Part("securityId") securityId: MultipartBody.Part,
-		@Part("firstname") firstName: MultipartBody.Part,
-		@Part("middlename") middleName: MultipartBody.Part,
-		@Part("lastname") lastName: MultipartBody.Part,
-		@Part("description") description: MultipartBody.Part
+		@Part securityId: RequestBody,
+		@Part firstName: RequestBody,
+		@Part middleName: RequestBody,
+		@Part lastName: RequestBody,
+		@Part description: RequestBody
 	)
 }

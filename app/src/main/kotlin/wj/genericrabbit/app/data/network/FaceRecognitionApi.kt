@@ -8,5 +8,5 @@ import wj.genericrabbit.app.data.network.model.AttendeeDto
 interface FaceRecognitionApi {
 
 	@GET("face-recognition")
-	suspend fun getSimilarAttendeesByPhoto(@Body body: RequestBody): List<AttendeeDto>
+	suspend fun getAttendeesByPhoto(@Body body: RequestBody): List<AttendeeDto>
 }

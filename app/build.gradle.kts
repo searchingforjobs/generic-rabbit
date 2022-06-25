@@ -66,7 +66,9 @@ dependencies {
 	implementation("androidx.camera:camera-view:$cameraxVersion")
 	implementation("androidx.camera:camera-extensions:$cameraxVersion")
 
+	implementation("com.squareup.okhttp3:okhttp:4.10.0")
 	implementation("com.squareup.moshi:moshi:$moshiVersion")
+	implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
 	implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
 	implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
 

@@ -1,6 +1,7 @@
 package wj.genericrabbit.app.domain.model
 
 data class Attendee(
+	val id: String,
 	val firstName: String,
 	val lastName: String,
 	val middleName: String,
