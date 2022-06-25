@@ -18,8 +18,9 @@ class AttendeesRepositoryImpl @Inject constructor(
 ) : AttendeesRepository {
 
 	override suspend fun getAttendeeById(id: String): Attendee? {
-		val attendeeDto = attendeesApi.getAttendeeById(id) ?: return null
-		return attendeeMapper(attendeeDto)
+		val attendeeDtoResponse = attendeesApi.getAttendeeById(id)
+		val body = attendeeDtoResponse.body() ?: return null
+		return if (attendeeDtoResponse.isSuccessful) attendeeMapper(body) else null
 	}
 
 	override suspend fun getAttendeesByPhoto(photoPath: String): List<Attendee> {
