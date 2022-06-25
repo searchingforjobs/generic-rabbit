@@ -13,6 +13,7 @@ import wj.genericrabbit.app.data.network.AttendeesApi
 import wj.genericrabbit.app.data.network.FaceRecognitionApi
 import wj.genericrabbit.app.data.network.IncidentsApi
 import wj.genericrabbit.app.data.network.VisitsApi
+import wj.genericrabbit.app.data.network.converter.NullOnEmptyConverterFactory
 import javax.inject.Singleton
 
 private val BASE_URL = "http://84.201.178.199"
@@ -24,8 +25,9 @@ object ApiModule {
 	@Provides
 	@Singleton
 	fun provideRetrofit(moshi: Moshi): Retrofit = Retrofit.Builder()
-		.addConverterFactory(MoshiConverterFactory.create(moshi))
 		.baseUrl(BASE_URL)
+		.addConverterFactory(NullOnEmptyConverterFactory())
+		.addConverterFactory(MoshiConverterFactory.create(moshi))
 		.build()
 
 	@Provides

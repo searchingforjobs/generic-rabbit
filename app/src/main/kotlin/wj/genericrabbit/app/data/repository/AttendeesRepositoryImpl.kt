@@ -25,9 +25,7 @@ class AttendeesRepositoryImpl @Inject constructor(
 	override suspend fun getAttendeesByPhoto(photoPath: String): List<Attendee> {
 		val photoFile = File(photoPath)
 		val fileRequestBody = photoFile.asRequestBody("application/octet-stream".toMediaType())
-		val body = MultipartBody.Builder()
-			.addFormDataPart("file", photoFile.name, fileRequestBody)
-			.build()
-		return faceRecognitionApi.getAttendeesByPhoto(body).map(attendeeMapper)
+		val fileBody = MultipartBody.Part.createFormData("file", photoFile.name, fileRequestBody)
+		return faceRecognitionApi.getAttendeesByPhoto(fileBody).map(attendeeMapper)
 	}
 }

@@ -1,12 +1,14 @@
 package wj.genericrabbit.app.data.network
 
-import okhttp3.RequestBody
-import retrofit2.http.Body
-import retrofit2.http.GET
+import okhttp3.MultipartBody
+import retrofit2.http.Multipart
+import retrofit2.http.POST
+import retrofit2.http.Part
 import wj.genericrabbit.app.data.network.model.AttendeeDto
 
 interface FaceRecognitionApi {
 
-	@GET("face-recognition")
-	suspend fun getAttendeesByPhoto(@Body body: RequestBody): List<AttendeeDto>
+	@Multipart
+	@POST("face-recognition")
+	suspend fun getAttendeesByPhoto(@Part file: MultipartBody.Part): List<AttendeeDto>
 }

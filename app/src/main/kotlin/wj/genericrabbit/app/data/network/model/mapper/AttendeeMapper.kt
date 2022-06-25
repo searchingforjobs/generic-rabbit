@@ -10,6 +10,7 @@ interface AttendeeMapper : Mapper<AttendeeDto, Attendee>
 class AttendeeMapperImpl @Inject constructor() : AttendeeMapper {
 
 	override fun invoke(attendeeDto: AttendeeDto) = Attendee(
+		attendeeDto.id,
 		attendeeDto.profile?.firstName ?: "",
 		attendeeDto.profile?.lastName ?: "",
 		attendeeDto.profile?.middleName ?: "",

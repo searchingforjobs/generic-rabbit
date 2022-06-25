@@ -26,5 +26,5 @@ interface RepositoryModule {
 
 	@Binds
 	@Singleton
-	fun bindIncidentsRepository(visitsRepositoryImpl: VisitsRepositoryImpl): VisitsRepository
+	fun bindVisitsRepository(visitsRepositoryImpl: VisitsRepositoryImpl): VisitsRepository
 }

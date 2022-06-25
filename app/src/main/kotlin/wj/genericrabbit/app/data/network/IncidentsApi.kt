@@ -16,7 +16,7 @@ interface IncidentsApi {
 	@Multipart
 	@POST("incidents")
 	suspend fun createIncident(
-		@Part("file") file: MultipartBody.Part,
+		@Part file: MultipartBody.Part,
 		@Part("securityId") securityId: RequestBody,
 		@Part("firstname") firstName: RequestBody,
 		@Part("middlename") middleName: RequestBody,

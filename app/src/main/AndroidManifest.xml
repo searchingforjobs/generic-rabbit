@@ -3,7 +3,13 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	package="wj.genericrabbit.app">
 
+	<uses-feature android:name="android.hardware.camera.any" />
+
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+
 	<application
+		android:usesCleartextTraffic="true"
 		android:name="wj.genericrabbit.app.MainApplication"
 		android:allowBackup="true"
 		android:dataExtractionRules="@xml/data_extraction_rules"
