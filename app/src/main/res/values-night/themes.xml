@@ -1,6 +1,6 @@
 <resources>
 
-	<style name="Base.V21.Night.Theme.Vitaland" parent="Theme.Material3.Dark">
+	<style name="Base.V21.Night.Theme.App" parent="Theme.Material3.Dark">
 		<item name="colorPrimary">@color/md_theme_dark_primary</item>
 		<item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
 		<item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
@@ -30,5 +30,5 @@
 		<item name="android:shadowColor">@color/md_theme_dark_shadow</item>
 	</style>
 
-	<style name="Base.Theme.Vitaland" parent="Base.V21.Night.Theme.Vitaland" />
+	<style name="Base.Theme.App" parent="Base.V21.Night.Theme.App" />
 </resources>
