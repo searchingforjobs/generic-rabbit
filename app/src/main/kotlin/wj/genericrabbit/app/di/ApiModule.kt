@@ -9,10 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
-import wj.genericrabbit.app.data.network.AttendeesApi
-import wj.genericrabbit.app.data.network.FaceRecognitionApi
-import wj.genericrabbit.app.data.network.IncidentsApi
-import wj.genericrabbit.app.data.network.VisitsApi
+import wj.genericrabbit.app.data.network.*
 import wj.genericrabbit.app.data.network.converter.NullOnEmptyConverterFactory
 import javax.inject.Singleton
 
@@ -42,7 +39,7 @@ object ApiModule {
 
 	@Provides
 	@Singleton
-	fun provideIncidentsApi(retrofit: Retrofit): IncidentsApi = retrofit.create()
+	fun provideIncidentsApi(retrofit: Retrofit): IncidentsApi = IncidentsApiMock()
 
 	@Provides
 	@Singleton

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 	private val binding by viewBinding(ActivityMainBinding::bind, R.id.container)
 	private val appBarConfiguration = AppBarConfiguration(
 		setOf(
-			R.id.navigation_login, R.id.navigation_home, R.id.navigation_profile, R.id.navigation_notifications
+			R.id.navigation_incidents, R.id.navigation_home, R.id.navigation_profile, R.id.navigation_notifications
 		)
 	)
 
@@ -30,10 +30,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 		setSupportActionBar(binding.toolbar)
 		val navController = binding.navHostFragmentActivityMain.getFragment<NavHostFragment>().navController
 		navController.addOnDestinationChangedListener { _, destination, _ ->
-			binding.navView.isVisible = destination.id != R.id.navigation_login
-			binding.toolbar.isVisible =
-				destination.id != R.id.navigation_identification_face ||
-						destination.id != R.id.navigation_identification_qr
+			binding.navView.isVisible = isNavigationVisible(destination.id)
+			binding.toolbar.isVisible = isNavigationVisible(destination.id)
 		}
 		setupActionBarWithNavController(navController, appBarConfiguration)
 		binding.navView.setupWithNavController(navController)
@@ -43,4 +41,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 		val navController = findNavController(R.id.nav_host_fragment_activity_main)
 		return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 	}
+
+	private fun isNavigationVisible(id: Int) = id != R.id.navigation_identification_face ||
+			id != R.id.navigation_identification_qr
 }

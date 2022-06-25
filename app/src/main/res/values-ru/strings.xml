@@ -9,10 +9,13 @@
 	<string name="button_yes">Да</string>
 	<string name="button_no">Нет</string>
 	<string name="title_home">Главная</string>
+	<string name="title_incidents">Инциденты</string>
+	<string name="button_filter_by_date_range">Фильтр по дате</string>
+	<string name="button_clear_date_filter">Очистить фильтр</string>
 	<string name="title_profile">Профиль</string>
 	<string name="title_notifications">Уведомления</string>
 	<string name="title_identification_result">Идентификация</string>
-	<string name="profile_item_button_action">Перейти</string>
+	<string name="incident_item_button_details">Подробнее</string>
 	<string name="edit_profile_title">Редактирование профиля</string>
 	<string name="edit_profile_first_name_label">Имя</string>
 	<string name="edit_profile_last_name_label">Фамилия</string>

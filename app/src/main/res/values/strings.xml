@@ -9,10 +9,13 @@
 	<string name="button_no">No</string>
 	<string name="title_login">Login</string>
 	<string name="title_home">Home</string>
+	<string name="title_incidents">Incidents</string>
+	<string name="button_filter_by_date_range">Filter by date</string>
+	<string name="button_clear_date_filter">Clear filter</string>
 	<string name="title_profile">Dashboard</string>
 	<string name="title_notifications">Notifications</string>
 	<string name="title_identification_result">Identification</string>
-	<string name="profile_item_button_action">Action</string>
+	<string name="incident_item_button_details">Details</string>
 	<string name="edit_profile_title">Edit profile</string>
 	<string name="edit_profile_first_name_label">First name</string>
 	<string name="edit_profile_last_name_label">Last name</string>

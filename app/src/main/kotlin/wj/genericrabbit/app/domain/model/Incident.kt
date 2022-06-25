@@ -12,3 +12,9 @@ data class Incident(
 	val createdAt: LocalDateTime,
 	val updatedAt: LocalDateTime = createdAt
 )
+
+val Incident.fullName: String
+	get() = "$lastName $firstName $middleName"
+
+val Incident.shortName: String
+	get() = "$firstName $lastName"

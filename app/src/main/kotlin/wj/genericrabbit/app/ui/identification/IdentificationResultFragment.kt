@@ -43,16 +43,16 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 	}
 
 	private fun setupNavigation() {
-		binding.buttonConfirmationYes.setOnClickListener {
+		binding.buttonIdentificationConfirmationYes.setOnClickListener {
 
 		}
-		binding.buttonConfirmationNo.setOnClickListener {
+		binding.buttonIdentificationConfirmationNo.setOnClickListener {
 
 		}
 	}
 
 	private fun render(uiState: IdentificationResultUiState) {
-		binding.progressIndicatorLoading.isVisible = uiState.isLoading
+		binding.progressIndicatorIdentificationLoading.isVisible = uiState.isLoading
 		binding.identificationResultContent.isVisible = !uiState.isLoading
 		if (!uiState.isLoadSuccessful) {
 			// TODO: navigate to incident creation
@@ -63,12 +63,12 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 			).show()
 		}
 		uiState.attendee?.let { attendee ->
-			binding.imageViewAttendeePhoto.load(attendee.photoUrl) {
+			binding.imageViewIdentificationAttendeePhoto.load(attendee.photoUrl) {
 				crossfade(true)
 			}
-			binding.textViewAttendeeName.text = attendee.fullName
+			binding.textViewIdentificationAttendeeName.text = attendee.fullName
 			if (attendee.fullName.isBlank()) {
-				binding.textViewAttendeeName.setText(R.string.unknown)
+				binding.textViewIdentificationAttendeeName.setText(R.string.unknown)
 			}
 		}
 	}

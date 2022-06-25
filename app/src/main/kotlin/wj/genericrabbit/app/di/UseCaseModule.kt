@@ -4,10 +4,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import wj.genericrabbit.app.domain.usecase.GetAttendeeByIdUseCase
-import wj.genericrabbit.app.domain.usecase.GetAttendeeByIdUseCaseImpl
-import wj.genericrabbit.app.domain.usecase.GetAttendeesByPhotoUseCase
-import wj.genericrabbit.app.domain.usecase.GetAttendeesByPhotoUseCaseImpl
+import wj.genericrabbit.app.domain.usecase.*
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -18,4 +15,7 @@ interface UseCaseModule {
 
 	@Binds
 	fun bindGetAttendeesByPhotoUseCase(getAttendeesByPhotoUseCaseImpl: GetAttendeesByPhotoUseCaseImpl): GetAttendeesByPhotoUseCase
+
+	@Binds
+	fun bindGetAllIncidentsUseCase(getAllIncidentsUseCaseImpl: GetAllIncidentsUseCaseImpl): GetAllIncidentsUseCase
 }

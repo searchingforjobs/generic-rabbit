@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="8dp">
+
+	<TextView
+		android:id="@+id/textView_name"
+		style="@style/TextAppearance.Material3.TitleLarge"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginEnd="12sp"
+		android:ellipsize="end"
+		android:maxLines="1"
+		android:textSize="16sp"
+		app:layout_constraintEnd_toStartOf="@+id/button_details"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/button_details"
+		tools:text="Королёв Андрей" />
+
+	<TextView
+		android:id="@+id/textView_date"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginEnd="12sp"
+		android:ellipsize="end"
+		android:maxLines="1"
+		android:textSize="12sp"
+		app:layout_constraintBottom_toBottomOf="@+id/button_details"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/button_details"
+		app:layout_constraintStart_toStartOf="parent"
+		tools:text="15.06.2022" />
+
+	<Button
+		android:id="@+id/button_details"
+		style="@style/Widget.Material3.Button.OutlinedButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="16dp"
+		android:text="@string/incident_item_button_details"
+		android:textSize="12sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<View
+		android:id="@+id/view_divider_incident"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginHorizontal="8dp"
+		android:layout_marginTop="16dp"
+		android:background="@drawable/list_divider"
+		app:layout_constraintTop_toBottomOf="@id/button_details" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

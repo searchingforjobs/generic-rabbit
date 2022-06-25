@@ -21,7 +21,7 @@
 				android:background="@color/md_theme_dark_background" />
 
 			<ImageView
-				android:id="@+id/imageView_attendee_photo"
+				android:id="@+id/imageView_identification_attendee_photo"
 				android:layout_width="0dp"
 				android:layout_height="match_parent"
 				android:backgroundTint="@color/md_theme_dark_background"
@@ -31,7 +31,7 @@
 		</androidx.constraintlayout.widget.ConstraintLayout>
 
 		<TextView
-			android:id="@+id/textView_attendee_name"
+			android:id="@+id/textView_identification_attendee_name"
 			style="@style/TextAppearance.Material3.TitleLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
 			android:orientation="horizontal">
 
 			<Button
-				android:id="@+id/button_confirmation_no"
+				android:id="@+id/button_identification_confirmation_no"
 				style="@style/Widget.Material3.Button.OutlinedButton"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
 				android:text="@string/button_no" />
 
 			<Button
-				android:id="@+id/button_confirmation_yes"
+				android:id="@+id/button_identification_confirmation_yes"
 				style="@style/Widget.Material3.Button.UnelevatedButton"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
 	</LinearLayout>
 
 	<com.google.android.material.progressindicator.CircularProgressIndicator
-		android:id="@+id/progressIndicator_loading"
+		android:id="@+id/progressIndicator_identification_loading"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_vertical|center_horizontal"
