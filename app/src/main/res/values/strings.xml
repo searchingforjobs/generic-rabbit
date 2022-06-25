@@ -1,9 +1,17 @@
 <resources>
 	<string name="app_name" translatable="false">Security</string>
+	<string name="camera_permission_not_granted">Camera permission not granted by the user.</string>
+	<string name="unknown">Unknown</string>
+	<string name="identification_qr">Scan QR code</string>
+	<string name="identification_face">Face ID</string>
+	<string name="identification_verify_attendee">Are the person in front of you and the one on the photo the same?</string>
+	<string name="button_yes">Yes</string>
+	<string name="button_no">No</string>
 	<string name="title_login">Login</string>
 	<string name="title_home">Home</string>
 	<string name="title_profile">Dashboard</string>
 	<string name="title_notifications">Notifications</string>
+	<string name="title_identification_result">Identification</string>
 	<string name="profile_item_button_action">Action</string>
 	<string name="edit_profile_title">Edit profile</string>
 	<string name="edit_profile_first_name_label">First name</string>

@@ -25,8 +25,7 @@ class IncidentsRepositoryImpl @Inject constructor(
 		val textMediaType = "text/plain".toMediaType()
 		incidentsApi.createIncident(
 			fileBody,
-			// TODO: securityId
-			"securityId".toRequestBody(textMediaType),
+			"2e117740-f6cb-4b70-ba09-44b11c2184c3".toRequestBody(textMediaType),
 			incident.firstName.toRequestBody(textMediaType),
 			incident.middleName.toRequestBody(textMediaType),
 			incident.lastName.toRequestBody(textMediaType),

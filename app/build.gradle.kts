@@ -71,6 +71,7 @@ dependencies {
 	implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
 	implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
 	implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
+	implementation("io.coil-kt:coil:2.1.0")
 
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3")
 	implementation("androidx.appcompat:appcompat:1.4.2")

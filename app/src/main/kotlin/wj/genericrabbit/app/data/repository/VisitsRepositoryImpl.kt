@@ -16,8 +16,7 @@ class VisitsRepositoryImpl @Inject constructor(
 
 	override suspend fun createVisit(visit: Visit) {
 		val createVisitDto = CreateVisitDto(
-			// TODO: securityId
-			"securityId",
+			"2e117740-f6cb-4b70-ba09-44b11c2184c3",
 			visit.attendee.id
 		)
 		visitsApi.createVisit(createVisitDto)

@@ -3,23 +3,55 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/mobile_navigation"
-	app:startDestination="@+id/navigation_login">
+	app:startDestination="@+id/navigation_home">
 
-	<action
-		android:id="@+id/action_global_profile"
-		app:destination="@id/navigation_profile" />
+	<fragment
+		android:id="@+id/navigation_home"
+		android:name="wj.genericrabbit.app.ui.home.HomeFragment"
+		android:label="@string/title_home"
+		tools:layout="@layout/fragment_home">
+		<action
+			android:id="@+id/home_toQrCaptureFragment"
+			app:destination="@id/navigation_identification_qr" />
+		<action
+			android:id="@+id/home_toFaceCaptureFragment"
+			app:destination="@id/navigation_identification_face" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/navigation_identification_face"
+		android:name="wj.genericrabbit.app.ui.identification.FaceCaptureFragment"
+		tools:layout="@layout/fragment_capture_face">
+		<action
+			android:id="@+id/face_toResultFragment"
+			app:destination="@+id/navigation_identification_result" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/navigation_identification_qr"
+		android:name="wj.genericrabbit.app.ui.identification.QrCaptureFragment"
+		tools:layout="@layout/fragment_capture_qr">
+		<action
+			android:id="@+id/qr_toResultFragment"
+			app:destination="@+id/navigation_identification_result" />
+	</fragment>
+
+	<dialog
+		android:id="@+id/navigation_identification_result"
+		android:name="wj.genericrabbit.app.ui.identification.IdentificationResultFragment"
+		android:label="@string/title_identification_result"
+		tools:layout="@layout/bottom_sheet_identification_result">
+		<argument
+			android:name="identificationData"
+			app:argType="wj.genericrabbit.app.domain.model.IdentificationData" />
+
+	</dialog>
 
 	<fragment
 		android:id="@+id/navigation_login"
 		android:name="wj.genericrabbit.app.ui.login.LoginFragment"
 		android:label="@string/title_login"
 		tools:layout="@layout/fragment_login" />
-
-	<fragment
-		android:id="@+id/navigation_home"
-		android:name="wj.genericrabbit.app.ui.home.HomeFragment"
-		android:label="@string/title_home"
-		tools:layout="@layout/fragment_home" />
 
 	<fragment
 		android:id="@+id/navigation_profile"

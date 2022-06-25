@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 		val navController = binding.navHostFragmentActivityMain.getFragment<NavHostFragment>().navController
 		navController.addOnDestinationChangedListener { _, destination, _ ->
 			binding.navView.isVisible = destination.id != R.id.navigation_login
+			binding.toolbar.isVisible =
+				destination.id != R.id.navigation_identification_face ||
+						destination.id != R.id.navigation_identification_qr
 		}
 		setupActionBarWithNavController(navController, appBarConfiguration)
 		binding.navView.setupWithNavController(navController)

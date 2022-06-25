@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="title_login">Вход</string>
+	<string name="camera_permission_not_granted">Разрешение для камеры не предоставлено.</string>
+	<string name="unknown">Неизвестно</string>
+	<string name="identification_qr">Сканировать QR-код</string>
+	<string name="identification_face">Face ID</string>
+	<string name="identification_verify_attendee">Это действительно тот человек?</string>
+	<string name="button_yes">Да</string>
+	<string name="button_no">Нет</string>
 	<string name="title_home">Главная</string>
 	<string name="title_profile">Профиль</string>
 	<string name="title_notifications">Уведомления</string>
+	<string name="title_identification_result">Идентификация</string>
 	<string name="profile_item_button_action">Перейти</string>
 	<string name="edit_profile_title">Редактирование профиля</string>
 	<string name="edit_profile_first_name_label">Имя</string>
