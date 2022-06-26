@@ -2,8 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/mobile_navigation"
+	android:id="@+id/security_app_navigation"
 	app:startDestination="@+id/navigation_home">
+
+	<action
+		android:id="@+id/action_global_home"
+		app:destination="@id/navigation_home"
+		app:popUpToInclusive="true" />
 
 	<fragment
 		android:id="@+id/navigation_home"
@@ -47,6 +52,9 @@
 		<action
 			android:id="@+id/result_toSuccessFragment"
 			app:destination="@+id/navigation_identification_success" />
+		<action
+			android:id="@+id/result_toCreateIncidentFragment"
+			app:destination="@+id/navigation_create_incident" />
 	</dialog>
 
 	<fragment
@@ -57,11 +65,18 @@
 		<argument
 			android:name="attendee"
 			app:argType="wj.genericrabbit.app.domain.model.Attendee" />
-		<action
-			android:id="@+id/success_toHomeFragment"
-			app:destination="@+id/navigation_home"
-			app:popUpToInclusive="true" />
 	</fragment>
+
+	<dialog
+		android:id="@+id/navigation_create_incident"
+		android:name="wj.genericrabbit.app.ui.incidents.create.CreateIncidentFragment"
+		android:label="@string/create_incident_title"
+		tools:layout="@layout/bottom_sheet_create_incident">
+		<argument
+			android:name="photoUrl"
+			app:argType="string"
+			app:nullable="true" />
+	</dialog>
 
 	<fragment
 		android:id="@+id/navigation_incidents"
@@ -88,11 +103,5 @@
 		android:name="wj.genericrabbit.app.ui.visits.VisitsFragment"
 		android:label="@string/title_visits"
 		tools:layout="@layout/fragment_list" />
-
-	<dialog
-		android:id="@+id/navigation_edit_profile"
-		android:name="wj.genericrabbit.app.ui.profile.edit.EditProfileFragment"
-		android:label="@string/edit_profile_title"
-		tools:layout="@layout/bottom_sheet_edit_profile"/>
 
 </navigation>

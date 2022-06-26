@@ -17,14 +17,15 @@
 	<string name="title_select_dates">Select date range</string>
 	<string name="incident_no_description">No description</string>
 	<string name="incident_date_time">Visit time: %s</string>
-	<string name="title_profile">Dashboard</string>
 	<string name="title_visits">Visits</string>
-	<string name="title_notifications">Notifications</string>
 	<string name="title_identification_result">Identification</string>
 	<string name="incident_item_button_details">Details</string>
-	<string name="edit_profile_title">Edit profile</string>
-	<string name="edit_profile_first_name_label">First name</string>
-	<string name="edit_profile_last_name_label">Last name</string>
-	<string name="edit_profile_patronymic_label">Patronymic</string>
-	<string name="edit_profile_button_apply">Apply</string>
+	<string name="create_incident_title">Create incident</string>
+	<string name="create_incident_first_name_label">First name</string>
+	<string name="create_incident_last_name_label">Last name</string>
+	<string name="create_incident_middle_name_label">Middle name</string>
+	<string name="create_incident_description_label">Description</string>
+	<string name="create_incident_button_create">Create</string>
+	<string name="home_card_title">Passing procedure for parents/relatives</string>
+	<string name="home_card_sub_title">Choose preferred type of identification</string>
 </resources>

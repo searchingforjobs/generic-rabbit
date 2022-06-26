@@ -17,14 +17,15 @@
 	<string name="title_select_dates">Выбор интервала дат</string>
 	<string name="incident_no_description">Нет описания</string>
 	<string name="incident_date_time">Время визита: %s</string>
-	<string name="title_profile">Профиль</string>
 	<string name="title_visits">Посещения</string>
-	<string name="title_notifications">Уведомления</string>
 	<string name="title_identification_result">Идентификация</string>
 	<string name="incident_item_button_details">Подробнее</string>
-	<string name="edit_profile_title">Редактирование профиля</string>
-	<string name="edit_profile_first_name_label">Имя</string>
-	<string name="edit_profile_last_name_label">Фамилия</string>
-	<string name="edit_profile_patronymic_label">Отчество</string>
-	<string name="edit_profile_button_apply">Применить</string>
+	<string name="create_incident_title">Создание инцидента</string>
+	<string name="create_incident_first_name_label">Имя</string>
+	<string name="create_incident_last_name_label">Фамилия</string>
+	<string name="create_incident_middle_name_label">Отчество</string>
+	<string name="create_incident_description_label">Описание</string>
+	<string name="create_incident_button_create">Создать</string>
+	<string name="home_card_title">Процедура пропуска родителей/родственников</string>
+	<string name="home_card_sub_title">Выберите вид сканирования, который предпочтительнее</string>
 </resources>

@@ -41,4 +41,9 @@ class IdentificationResultViewModel @Inject constructor(
 			}
 		}
 	}
+
+	fun getPhotoPath(identificationData: IdentificationData) = when (identificationData) {
+		is IdentificationData.FacePhoto -> identificationData.photoPath
+		is IdentificationData.QR -> null
+	}
 }

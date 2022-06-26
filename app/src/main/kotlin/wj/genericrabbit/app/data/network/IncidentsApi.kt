@@ -19,7 +19,7 @@ interface IncidentsApi {
 	@Multipart
 	@POST("incidents")
 	suspend fun createIncident(
-		@Part file: MultipartBody.Part,
+		@Part file: MultipartBody.Part?,
 		@Part("securityId") securityId: RequestBody,
 		@Part("firstname") firstName: RequestBody,
 		@Part("middlename") middleName: RequestBody,
@@ -83,7 +83,7 @@ class IncidentsApiMock : IncidentsApi {
 	}
 
 	override suspend fun createIncident(
-		file: MultipartBody.Part,
+		file: MultipartBody.Part?,
 		securityId: RequestBody,
 		firstName: RequestBody,
 		middleName: RequestBody,

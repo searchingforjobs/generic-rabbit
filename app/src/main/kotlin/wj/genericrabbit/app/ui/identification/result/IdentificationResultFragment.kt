@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -53,7 +52,7 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 			}
 		}
 		binding.buttonIdentificationConfirmationNo.setOnClickListener {
-
+			openCreateIncidentDialog()
 		}
 	}
 
@@ -62,12 +61,7 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 		binding.progressIndicatorIdentificationLoading.isVisible = uiState.isLoading
 		binding.identificationResultContent.isVisible = !uiState.isLoading
 		if (!uiState.isLoadSuccessful) {
-			// TODO: navigate to incident creation
-			Toast.makeText(
-				requireContext(),
-				"Load unsuccessful",
-				Toast.LENGTH_SHORT
-			).show()
+			openCreateIncidentDialog()
 		}
 		uiState.attendee?.let { attendee ->
 			binding.imageViewIdentificationAttendeePhoto.load(attendee.photoUrl) {
@@ -78,5 +72,11 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 				binding.textViewIdentificationAttendeeName.setText(R.string.unknown)
 			}
 		}
+	}
+
+	private fun openCreateIncidentDialog() {
+		val photoPath = viewModel.getPhotoPath(args.identificationData)
+		val toCreateIncidentDialog = IdentificationResultFragmentDirections.resultToCreateIncidentFragment(photoPath)
+		findNavController().navigate(toCreateIncidentDialog)
 	}
 }

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:id="@+id/create_incident_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/textView_create_incident_title"
+			style="@style/TextAppearance.Material3.TitleLarge"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:ellipsize="end"
+			android:maxLines="1"
+			android:text="@string/create_incident_title"
+			android:textAlignment="center"
+			android:textSize="18sp" />
+
+		<LinearLayout
+			android:id="@+id/group_create_incident_fields"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginHorizontal="12dp"
+			android:orientation="vertical">
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/textField_create_incident_last_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="12dp"
+				android:hint="@string/create_incident_last_name_label">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/textField_create_incident_first_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="12dp"
+				android:hint="@string/create_incident_first_name_label">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/textField_create_incident_middle_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="12dp"
+				android:hint="@string/create_incident_middle_name_label">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/textField_create_incident_description"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="12dp"
+				android:hint="@string/create_incident_description_label">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="top"
+					android:inputType="textMultiLine"
+					android:minLines="5" />
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<Button
+				android:id="@+id/button_create_incident"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:layout_marginTop="12dp"
+				android:text="@string/create_incident_button_create" />
+
+		</LinearLayout>
+	</LinearLayout>
+
+	<ProgressBar
+		android:id="@+id/progressBar_create_incident_loading"
+		style="?android:attr/progressBarStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:indeterminate="true" />
+
+</FrameLayout>

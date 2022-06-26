@@ -29,7 +29,7 @@ class IncidentDetailsFragment : BottomSheetDialogFragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		args.incident.run {
-			if (photoUrl.isNotBlank()) {
+			if (!photoUrl.isNullOrBlank()) {
 				binding.imageViewIncidentPhoto.load(photoUrl) {
 					crossfade(true)
 				}

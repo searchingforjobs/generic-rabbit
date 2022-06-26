@@ -24,4 +24,7 @@ interface UseCaseModule {
 
 	@Binds
 	fun bindCreateVisitUseCase(createVisitUseCaseImpl: CreateVisitUseCaseImpl): CreateVisitUseCase
+
+	@Binds
+	fun bindCreateIncidentUseCase(createIncidentUseCaseImpl: CreateIncidentUseCaseImpl): CreateIncidentUseCase
 }

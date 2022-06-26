@@ -19,10 +19,12 @@ class IncidentsRepositoryImpl @Inject constructor(
 	override suspend fun getAllIncidents() = incidentsApi.getAllIncidents().map(incidentMapper)
 
 	override suspend fun createIncident(incident: Incident) {
-		val photoFile = File(incident.photoUrl)
-		val fileRequestBody = photoFile.asRequestBody("application/octet-stream".toMediaType())
-		val fileBody = MultipartBody.Part.createFormData("file", photoFile.name, fileRequestBody)
 		val textMediaType = "text/plain".toMediaType()
+		val fileBody = incident.photoUrl?.let { photoUrl ->
+			val photoFile = File(photoUrl)
+			val fileRequestBody = photoFile.asRequestBody("application/octet-stream".toMediaType())
+			MultipartBody.Part.createFormData("file", photoFile.name, fileRequestBody)
+		}
 		incidentsApi.createIncident(
 			fileBody,
 			"2e117740-f6cb-4b70-ba09-44b11c2184c3".toRequestBody(textMediaType),

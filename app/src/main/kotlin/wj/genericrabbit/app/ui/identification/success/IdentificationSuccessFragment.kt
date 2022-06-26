@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import wj.genericrabbit.app.R
+import wj.genericrabbit.app.SecurityAppNavigationDirections
 import wj.genericrabbit.app.ui.util.extension.onBackPressed
 
 @AndroidEntryPoint
@@ -18,7 +19,7 @@ class IdentificationSuccessFragment : Fragment(R.layout.fragment_identification_
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		onBackPressed {
-			val toHomeScreen = IdentificationSuccessFragmentDirections.successToHomeFragment()
+			val toHomeScreen = SecurityAppNavigationDirections.actionGlobalHome()
 			findNavController().navigate(toHomeScreen)
 		}
 		viewModel.createVisit(args.attendee)
