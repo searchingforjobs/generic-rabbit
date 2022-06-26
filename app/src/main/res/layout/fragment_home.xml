@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/cardView_confirmation"
+	android:id="@+id/cardView_home"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:layout_marginHorizontal="24dp"
 	android:layout_marginTop="24dp"
-	android:backgroundTint="?colorSurfaceVariant">
+	android:backgroundTint="?colorPrimaryContainer">
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -15,7 +15,7 @@
 		android:orientation="vertical">
 
 		<TextView
-			style="@style/TextAppearance.Material3.TitleMedium"
+			style="?textAppearanceTitleMedium"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:text="@string/home_card_title" />
@@ -34,7 +34,7 @@
 
 			<Button
 				android:id="@+id/button_qr"
-				style="@style/Widget.Material3.Button.OutlinedButton"
+				style="?materialButtonOutlinedStyle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"

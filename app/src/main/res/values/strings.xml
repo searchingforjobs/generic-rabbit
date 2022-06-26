@@ -8,8 +8,9 @@
 	<string name="identification_success_text">Identification succeeded!</string>
 	<string name="button_yes">Yes</string>
 	<string name="button_no">No</string>
-	<string name="title_login">Login</string>
 	<string name="title_identification_finish">Finish</string>
+	<string name="title_identification">Identification</string>
+	<string name="title_camera_capture">Capture</string>
 	<string name="title_home">Home</string>
 	<string name="title_incidents">Incidents</string>
 	<string name="button_filter_by_date_range">Filter by date</string>
@@ -28,4 +29,7 @@
 	<string name="create_incident_button_create">Create</string>
 	<string name="home_card_title">Passing procedure for parents/relatives</string>
 	<string name="home_card_sub_title">Choose preferred type of identification</string>
+	<string name="similar_attendees_incident">There\'s no such person</string>
+	<string name="similar_attendees_title">List of persons similar to the attendee</string>
+	<string name="similar_attendees_sub_title">Is there a similar person?</string>
 </resources>

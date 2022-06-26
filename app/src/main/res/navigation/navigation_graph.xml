@@ -7,8 +7,8 @@
 
 	<action
 		android:id="@+id/action_global_home"
-		app:destination="@id/navigation_home"
-		app:popUpToInclusive="true" />
+		app:popUpTo="@id/navigation_home"
+		app:popUpToInclusive="false" />
 
 	<fragment
 		android:id="@+id/navigation_home"
@@ -25,6 +25,7 @@
 
 	<fragment
 		android:id="@+id/navigation_identification_face"
+		android:label="@string/title_camera_capture"
 		android:name="wj.genericrabbit.app.ui.identification.capture.FaceCaptureFragment"
 		tools:layout="@layout/fragment_capture_face">
 		<action
@@ -34,6 +35,7 @@
 
 	<fragment
 		android:id="@+id/navigation_identification_qr"
+		android:label="@string/title_camera_capture"
 		android:name="wj.genericrabbit.app.ui.identification.capture.QrCaptureFragment"
 		tools:layout="@layout/fragment_capture_qr">
 		<action
@@ -53,6 +55,9 @@
 			android:id="@+id/result_toSuccessFragment"
 			app:destination="@+id/navigation_identification_success" />
 		<action
+			android:id="@+id/result_toSimilarAttendeesFragment"
+			app:destination="@+id/navigation_identification_similar" />
+		<action
 			android:id="@+id/result_toCreateIncidentFragment"
 			app:destination="@+id/navigation_create_incident" />
 	</dialog>
@@ -65,6 +70,27 @@
 		<argument
 			android:name="attendee"
 			app:argType="wj.genericrabbit.app.domain.model.Attendee" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/navigation_identification_similar"
+		android:name="wj.genericrabbit.app.ui.identification.similar.SimilarAttendeesFragment"
+		android:label="@string/title_identification"
+		tools:layout="@layout/fragment_identification_success">
+		<argument
+			android:name="attendees"
+			app:argType="wj.genericrabbit.app.domain.model.Attendee[]" />
+		<argument
+			android:name="photoUrl"
+			android:defaultValue="@null"
+			app:argType="string"
+			app:nullable="true" />
+		<action
+			android:id="@+id/similar_toSuccessFragment"
+			app:destination="@+id/navigation_identification_success" />
+		<action
+			android:id="@+id/similar_toCreateIncidentFragment"
+			app:destination="@+id/navigation_create_incident" />
 	</fragment>
 
 	<dialog

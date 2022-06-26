@@ -1,7 +1,9 @@
 package wj.genericrabbit.app.domain.model
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Attendee(
 	val id: String,
 	val firstName: String,
@@ -9,7 +11,7 @@ data class Attendee(
 	val middleName: String,
 	val photoUrl: String,
 	val status: AttendeeStatus
-) : Serializable
+) : Parcelable
 
 val Attendee.fullName: String
 	get() = "$lastName $firstName $middleName"

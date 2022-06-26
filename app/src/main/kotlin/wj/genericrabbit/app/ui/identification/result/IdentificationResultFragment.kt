@@ -24,6 +24,7 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 	private val viewModel by viewModels<IdentificationResultViewModel>()
 	private val args by navArgs<IdentificationResultFragmentArgs>()
 	private var currentAttendee: Attendee? = null
+	private var similarAttendees = emptyList<Attendee>()
 
 	private val binding: BottomSheetIdentificationResultBinding
 		get() = _binding!!
@@ -52,12 +53,17 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 			}
 		}
 		binding.buttonIdentificationConfirmationNo.setOnClickListener {
-			openCreateIncidentDialog()
+			if (similarAttendees.isNotEmpty()) {
+				navigateToSimilarAttendees()
+			} else {
+				openCreateIncidentDialog()
+			}
 		}
 	}
 
 	private fun render(uiState: IdentificationResultUiState) {
 		currentAttendee = uiState.attendee
+		similarAttendees = uiState.similarAttendees
 		binding.progressIndicatorIdentificationLoading.isVisible = uiState.isLoading
 		binding.identificationResultContent.isVisible = !uiState.isLoading
 		if (!uiState.isLoadSuccessful) {
@@ -72,6 +78,12 @@ class IdentificationResultFragment : BottomSheetDialogFragment() {
 				binding.textViewIdentificationAttendeeName.setText(R.string.unknown)
 			}
 		}
+	}
+
+	private fun navigateToSimilarAttendees() {
+		val toSimilarAttendees =
+			IdentificationResultFragmentDirections.resultToSimilarAttendeesFragment(similarAttendees.toTypedArray())
+		findNavController().navigate(toSimilarAttendees)
 	}
 
 	private fun openCreateIncidentDialog() {

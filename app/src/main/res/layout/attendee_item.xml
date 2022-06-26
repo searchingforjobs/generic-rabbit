@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/cardView_attendee"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginHorizontal="24dp"
+	android:layout_marginTop="24dp"
+	android:backgroundTint="?colorPrimaryContainer">
+
+	<LinearLayout
+		android:id="@+id/attendee_card_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="200dp"
+			android:backgroundTint="?colorSurface"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="?colorOnPrimaryContainer" />
+
+			<ImageView
+				android:id="@+id/imageView_attendee_photo"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:src="@drawable/avatar"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<TextView
+			android:id="@+id/textView_attendee_name"
+			style="?textAppearanceTitleLarge"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="12dp"
+			android:layout_marginTop="12dp"
+			android:text="@string/unknown" />
+
+		<Button
+			android:id="@+id/button_attendee_confirmation"
+			style="?materialButtonStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:layout_marginTop="24dp"
+			android:layout_marginEnd="12dp"
+			android:layout_marginBottom="12dp"
+			android:text="@string/button_yes" />
+
+	</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

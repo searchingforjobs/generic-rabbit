@@ -20,7 +20,7 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
 		android:layout_marginHorizontal="12dp"
-		style="@style/TextAppearance.Material3.TitleLarge"
+		style="?textAppearanceTitleLarge"
 		android:text="@string/identification_success_text"
 		android:textAlignment="center" />
 

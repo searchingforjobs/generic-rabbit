@@ -13,18 +13,18 @@
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"
 			android:layout_height="200dp"
+			android:backgroundTint="?colorSurface"
 			app:layout_constraintTop_toTopOf="parent">
 
 			<View
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:background="@color/md_theme_dark_background" />
+				android:background="?colorOnPrimaryContainer" />
 
 			<ImageView
 				android:id="@+id/imageView_identification_attendee_photo"
 				android:layout_width="0dp"
 				android:layout_height="match_parent"
-				android:backgroundTint="@color/md_theme_dark_background"
 				android:src="@drawable/avatar"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent" />
@@ -32,7 +32,7 @@
 
 		<TextView
 			android:id="@+id/textView_identification_attendee_name"
-			style="@style/TextAppearance.Material3.TitleLarge"
+			style="?textAppearanceTitleLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginHorizontal="12dp"
@@ -40,7 +40,7 @@
 			android:text="@string/unknown" />
 
 		<TextView
-			style="@style/TextAppearance.Material3.BodyLarge"
+			style="?textAppearanceBodyLarge"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginHorizontal="12dp"
@@ -53,12 +53,12 @@
 			android:layout_gravity="end"
 			android:layout_marginTop="24dp"
 			android:layout_marginEnd="12dp"
-			android:layout_marginBottom="12dp"
+			android:layout_marginBottom="18dp"
 			android:orientation="horizontal">
 
 			<Button
 				android:id="@+id/button_identification_confirmation_no"
-				style="@style/Widget.Material3.Button.OutlinedButton"
+				style="?materialButtonOutlinedStyle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="6dp"
@@ -66,7 +66,7 @@
 
 			<Button
 				android:id="@+id/button_identification_confirmation_yes"
-				style="@style/Widget.Material3.Button.UnelevatedButton"
+				style="?materialButtonStyle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/button_yes" />
@@ -78,6 +78,6 @@
 		android:id="@+id/progressIndicator_identification_loading"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="center_vertical|center_horizontal"
+		android:layout_gravity="center"
 		android:indeterminate="true" />
 </FrameLayout>

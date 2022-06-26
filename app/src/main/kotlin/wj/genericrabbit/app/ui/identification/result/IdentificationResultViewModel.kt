@@ -29,7 +29,13 @@ class IdentificationResultViewModel @Inject constructor(
 				it.copy(isLoading = true)
 			}
 			val attendee = when (identificationData) {
-				is IdentificationData.FacePhoto -> getAttendeesByPhotoUseCase(identificationData.photoPath).firstOrNull()
+				is IdentificationData.FacePhoto -> {
+					val attendees = getAttendeesByPhotoUseCase(identificationData.photoPath)
+					uiState.update {
+						it.copy(similarAttendees = attendees.drop(1))
+					}
+					attendees.firstOrNull()
+				}
 				is IdentificationData.QR -> getAttendeeByIdUseCase(identificationData.attendeeId)
 			}
 			uiState.update {

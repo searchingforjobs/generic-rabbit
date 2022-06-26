@@ -5,6 +5,7 @@ plugins {
 	id("dagger.hilt.android.plugin")
 	id("androidx.navigation.safeargs.kotlin")
 	id("com.google.devtools.ksp") version "1.7.0-1.0.6"
+	id("kotlin-parcelize")
 }
 
 val androidGradleVersion: String by rootProject.extra

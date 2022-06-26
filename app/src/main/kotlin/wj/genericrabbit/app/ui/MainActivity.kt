@@ -40,6 +40,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 	}
 
 
-	private fun isNavigationVisible(id: Int) = id != R.id.navigation_identification_face ||
+	private fun isNavigationVisible(id: Int) = id != R.id.navigation_identification_face &&
 			id != R.id.navigation_identification_qr
 }
