@@ -6,9 +6,11 @@
 	<string name="identification_qr">Сканировать QR-код</string>
 	<string name="identification_face">Face ID</string>
 	<string name="identification_verify_attendee">Это действительно тот человек?</string>
+	<string name="identification_success_text">Идентификация прошла успешно!</string>
 	<string name="button_yes">Да</string>
 	<string name="button_no">Нет</string>
 	<string name="title_home">Главная</string>
+	<string name="title_identification_finish">Завершение</string>
 	<string name="title_incidents">Инциденты</string>
 	<string name="button_filter_by_date_range">Фильтр по дате</string>
 	<string name="button_clear_date_filter">Очистить фильтр</string>

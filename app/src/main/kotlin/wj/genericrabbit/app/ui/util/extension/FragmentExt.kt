@@ -1,6 +1,7 @@
 package wj.genericrabbit.app.ui.util.extension
 
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -18,5 +19,12 @@ fun <T> Fragment.observeUiState(uiStateFlow: Flow<T>, render: (T) -> Unit): Job 
 			uiStateFlow.collect(render)
 		}
 	}
+}
+
+inline fun Fragment.onBackPressed(crossinline action: () -> Unit) {
+	val callback = object : OnBackPressedCallback(true) {
+		override fun handleOnBackPressed() = action()
+	}
+	requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 }
 

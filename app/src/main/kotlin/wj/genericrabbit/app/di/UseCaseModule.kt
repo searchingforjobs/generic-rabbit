@@ -18,4 +18,7 @@ interface UseCaseModule {
 
 	@Binds
 	fun bindGetAllIncidentsUseCase(getAllIncidentsUseCaseImpl: GetAllIncidentsUseCaseImpl): GetAllIncidentsUseCase
+
+	@Binds
+	fun bindCreateVisitUseCase(createVisitUseCaseImpl: CreateVisitUseCaseImpl): CreateVisitUseCase
 }

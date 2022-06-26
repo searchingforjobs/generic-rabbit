@@ -1,5 +1,7 @@
 package wj.genericrabbit.app.domain.model
 
+import java.io.Serializable
+
 data class Attendee(
 	val id: String,
 	val firstName: String,
@@ -7,7 +9,7 @@ data class Attendee(
 	val middleName: String,
 	val photoUrl: String,
 	val status: AttendeeStatus
-)
+) : Serializable
 
 val Attendee.fullName: String
 	get() = "$lastName $firstName $middleName"

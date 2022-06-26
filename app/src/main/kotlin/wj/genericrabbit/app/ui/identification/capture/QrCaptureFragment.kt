@@ -1,4 +1,4 @@
-package wj.genericrabbit.app.ui.identification
+package wj.genericrabbit.app.ui.identification.capture
 
 import android.os.Bundle
 import android.view.View
@@ -13,13 +13,19 @@ import com.google.zxing.BarcodeFormat
 import wj.genericrabbit.app.R
 import wj.genericrabbit.app.databinding.FragmentCaptureQrBinding
 import wj.genericrabbit.app.domain.model.IdentificationData
+import wj.genericrabbit.app.ui.identification.util.extension.checkOrRequestCameraPermission
+import wj.genericrabbit.app.ui.identification.util.extension.registerForCameraPermissionResult
 
 class QrCaptureFragment : Fragment(R.layout.fragment_capture_qr) {
 
 	private val binding by viewBinding(FragmentCaptureQrBinding::bind)
+	private val requestPermissionLauncher = registerForCameraPermissionResult { codeScanner?.startPreview() }
 	private var codeScanner: CodeScanner? = null
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		checkOrRequestCameraPermission(requestPermissionLauncher) {
+			codeScanner?.startPreview()
+		}
 		val scannerView = binding.scannerView
 		val activity = requireActivity()
 		val codeScanner = CodeScanner(activity, scannerView).apply {

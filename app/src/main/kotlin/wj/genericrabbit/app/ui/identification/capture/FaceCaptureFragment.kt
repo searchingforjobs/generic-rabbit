@@ -1,4 +1,4 @@
-package wj.genericrabbit.app.ui.identification
+package wj.genericrabbit.app.ui.identification.capture
 
 import android.graphics.*
 import android.os.Bundle
@@ -31,9 +31,7 @@ private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
 class FaceCaptureFragment : Fragment(R.layout.fragment_capture_face) {
 
 	private val binding by viewBinding(FragmentCaptureFaceBinding::bind)
-
 	private val requestPermissionLauncher = registerForCameraPermissionResult { startCamera() }
-
 	private var imageCapture: ImageCapture? = null
 	private lateinit var cameraExecutor: ExecutorService
 

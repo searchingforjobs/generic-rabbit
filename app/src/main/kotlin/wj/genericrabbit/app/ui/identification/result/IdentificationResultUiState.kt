@@ -1,4 +1,4 @@
-package wj.genericrabbit.app.ui.identification
+package wj.genericrabbit.app.ui.identification.result
 
 import wj.genericrabbit.app.domain.model.Attendee
 

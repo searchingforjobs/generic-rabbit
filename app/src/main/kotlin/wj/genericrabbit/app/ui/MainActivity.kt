@@ -18,17 +18,14 @@ import wj.genericrabbit.app.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
 	private val binding by viewBinding(ActivityMainBinding::bind, R.id.container)
-	private val appBarConfiguration = AppBarConfiguration(
-		setOf(
-			R.id.navigation_incidents, R.id.navigation_home, R.id.navigation_profile, R.id.navigation_notifications
-		)
-	)
+	private lateinit var appBarConfiguration: AppBarConfiguration
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
 		setSupportActionBar(binding.toolbar)
 		val navController = binding.navHostFragmentActivityMain.getFragment<NavHostFragment>().navController
+		appBarConfiguration = AppBarConfiguration(navController.graph)
 		navController.addOnDestinationChangedListener { _, destination, _ ->
 			binding.navView.isVisible = isNavigationVisible(destination.id)
 			binding.toolbar.isVisible = isNavigationVisible(destination.id)
@@ -41,6 +38,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 		val navController = findNavController(R.id.nav_host_fragment_activity_main)
 		return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 	}
+
 
 	private fun isNavigationVisible(id: Int) = id != R.id.navigation_identification_face ||
 			id != R.id.navigation_identification_qr

@@ -1,4 +1,4 @@
-package wj.genericrabbit.app.ui.identification
+package wj.genericrabbit.app.ui.identification.result
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
