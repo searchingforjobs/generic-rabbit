@@ -14,6 +14,9 @@ data class Attendee(
 val Attendee.fullName: String
 	get() = "$lastName $firstName $middleName"
 
+val Attendee.shortName: String
+	get() = "$firstName $lastName"
+
 enum class AttendeeStatus {
 	PENDING, CONFIRMED
 }

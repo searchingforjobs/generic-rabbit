@@ -3,10 +3,10 @@ package wj.genericrabbit.app.di
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ViewModelComponent
 import wj.genericrabbit.app.domain.usecase.*
 
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 @Module
 interface UseCaseModule {
 
@@ -18,6 +18,9 @@ interface UseCaseModule {
 
 	@Binds
 	fun bindGetAllIncidentsUseCase(getAllIncidentsUseCaseImpl: GetAllIncidentsUseCaseImpl): GetAllIncidentsUseCase
+
+	@Binds
+	fun bindGetAllVisitsUseCase(getAllVisitsUseCaseImpl: GetAllVisitsUseCaseImpl): GetAllVisitsUseCase
 
 	@Binds
 	fun bindCreateVisitUseCase(createVisitUseCaseImpl: CreateVisitUseCaseImpl): CreateVisitUseCase

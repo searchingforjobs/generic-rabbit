@@ -67,7 +67,7 @@
 		android:id="@+id/navigation_incidents"
 		android:name="wj.genericrabbit.app.ui.incidents.IncidentsFragment"
 		android:label="@string/title_incidents"
-		tools:layout="@layout/fragment_incidents">
+		tools:layout="@layout/fragment_list">
 		<action
 			android:id="@+id/incidents_toDetailsFragment"
 			app:destination="@+id/navigation_incident_details" />
@@ -84,25 +84,15 @@
 	</dialog>
 
 	<fragment
-		android:id="@+id/navigation_profile"
-		android:name="wj.genericrabbit.app.ui.profile.ProfileFragment"
-		android:label="@string/title_profile"
-		tools:layout="@layout/fragment_profile">
-		<action
-			android:id="@+id/action_profileFragment_to_editProfileFragment"
-			app:destination="@+id/navigation_edit_profile" />
-	</fragment>
-
-	<fragment
-		android:id="@+id/navigation_notifications"
-		android:name="wj.genericrabbit.app.ui.notifications.NotificationsFragment"
-		android:label="@string/title_notifications"
-		tools:layout="@layout/fragment_notifications" />
+		android:id="@+id/navigation_visits"
+		android:name="wj.genericrabbit.app.ui.visits.VisitsFragment"
+		android:label="@string/title_visits"
+		tools:layout="@layout/fragment_list" />
 
 	<dialog
 		android:id="@+id/navigation_edit_profile"
 		android:name="wj.genericrabbit.app.ui.profile.edit.EditProfileFragment"
 		android:label="@string/edit_profile_title"
-		tools:layout="@layout/bottom_sheet_edit_profile"></dialog>
+		tools:layout="@layout/bottom_sheet_edit_profile"/>
 
 </navigation>

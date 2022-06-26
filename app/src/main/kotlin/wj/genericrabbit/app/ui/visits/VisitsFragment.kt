@@ -1,4 +1,4 @@
-package wj.genericrabbit.app.ui.incidents
+package wj.genericrabbit.app.ui.visits
 
 import android.os.Bundle
 import android.view.View
@@ -14,14 +14,14 @@ import wj.genericrabbit.app.databinding.FragmentListBinding
 import wj.genericrabbit.app.ui.util.extension.observeUiState
 
 @AndroidEntryPoint
-class IncidentsFragment : Fragment(R.layout.fragment_list) {
+class VisitsFragment : Fragment(R.layout.fragment_list) {
 
 	private val binding by viewBinding(FragmentListBinding::bind)
-	private val viewModel by viewModels<IncidentsViewModel>()
-	private val incidentsListAdapter = IncidentsListAdapter()
+	private val viewModel by viewModels<VisitsViewModel>()
+	private val visitsListAdapter = VisitsListAdapter()
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		binding.recyclerViewList.adapter = incidentsListAdapter
+		binding.recyclerViewList.adapter = visitsListAdapter
 		observeUiState(viewModel, ::render)
 		setupNavigation()
 		setupRefresh()
@@ -54,9 +54,9 @@ class IncidentsFragment : Fragment(R.layout.fragment_list) {
 		}
 	}
 
-	private fun render(uiState: IncidentsUiState) {
+	private fun render(uiState: VisitsUiState) {
 		binding.recyclerViewList.isVisible = !uiState.isLoading
 		binding.swipeRefreshLayoutList.isRefreshing = uiState.isLoading
-		incidentsListAdapter.submitList(uiState.incidentsList)
+		visitsListAdapter.submitList(uiState.visitsList)
 	}
 }

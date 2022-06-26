@@ -17,7 +17,7 @@ class IncidentMapperImpl @Inject constructor() : IncidentMapper {
 		incidentDto.lastName,
 		incidentDto.photoUrl,
 		incidentDto.description,
-		LocalDateTime.parse(incidentDto.createdAt),
-		LocalDateTime.parse(incidentDto.updatedAt)
+		LocalDateTime.parse(incidentDto.createdAt.dropLast(1)),
+		LocalDateTime.parse(incidentDto.updatedAt.dropLast(1))
 	)
 }

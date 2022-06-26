@@ -13,6 +13,6 @@ class VisitMapperImpl @Inject constructor(private val attendeeMapper: AttendeeMa
 	override fun invoke(visitDto: VisitDto) = Visit(
 		visitDto.id,
 		attendeeMapper(visitDto.attendee),
-		LocalDateTime.parse(visitDto.createdAt)
+		LocalDateTime.parse(visitDto.createdAt.dropLast(1))
 	)
 }

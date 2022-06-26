@@ -1,4 +1,4 @@
-package wj.genericrabbit.app.ui.incidents
+package wj.genericrabbit.app.ui.visits
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,37 +8,37 @@ import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import wj.genericrabbit.app.domain.model.Incident
-import wj.genericrabbit.app.domain.usecase.GetAllIncidentsUseCase
+import wj.genericrabbit.app.domain.model.Visit
+import wj.genericrabbit.app.domain.usecase.GetAllVisitsUseCase
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import javax.inject.Inject
 
 @HiltViewModel
-class IncidentsViewModel @Inject constructor(
-	private val getAllIncidentsUseCase: GetAllIncidentsUseCase
-) : ViewModel(), Flow<IncidentsUiState> {
+class VisitsViewModel @Inject constructor(
+	private val getAllVisitsUseCase: GetAllVisitsUseCase
+) : ViewModel(), Flow<VisitsUiState> {
 
-	private val uiState = MutableStateFlow(IncidentsUiState())
-	private var incidentsList = emptyList<Incident>()
+	private val uiState = MutableStateFlow(VisitsUiState())
+	private var visitsList = emptyList<Visit>()
 
 	init {
 		update()
 	}
 
-	override suspend fun collect(collector: FlowCollector<IncidentsUiState>) = uiState.collect(collector)
+	override suspend fun collect(collector: FlowCollector<VisitsUiState>) = uiState.collect(collector)
 
 	fun update() {
 		viewModelScope.launch {
 			uiState.update {
 				it.copy(isLoading = true)
 			}
-			val incidentsList = getAllIncidentsUseCase()
-			this@IncidentsViewModel.incidentsList = incidentsList
+			val visitsList = getAllVisitsUseCase()
+			this@VisitsViewModel.visitsList = visitsList
 			uiState.update {
 				it.copy(
 					isLoading = false,
-					incidentsList = incidentsList
+					visitsList = visitsList
 				)
 			}
 		}
@@ -47,12 +47,12 @@ class IncidentsViewModel @Inject constructor(
 	fun filterByDateRange(fromEpochMillis: Long, toEpochMillis: Long) {
 		val from = LocalDateTime.ofEpochSecond(fromEpochMillis / 1000, 0, ZoneOffset.UTC)
 		val to = LocalDateTime.ofEpochSecond(toEpochMillis / 1000, 0, ZoneOffset.UTC)
-		val filteredList = incidentsList.filter {
+		val filteredList = visitsList.filter {
 			it.createdAt.isDateTimeWithinRange(from, to)
 		}
 		uiState.update {
 			it.copy(
-				incidentsList = filteredList
+				visitsList = filteredList
 			)
 		}
 	}
@@ -60,7 +60,7 @@ class IncidentsViewModel @Inject constructor(
 	fun clearFilter() {
 		uiState.update {
 			it.copy(
-				incidentsList = incidentsList
+				visitsList = visitsList
 			)
 		}
 	}

@@ -65,6 +65,7 @@ dependencies {
 	implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
 	implementation("androidx.camera:camera-view:$cameraxVersion")
 	implementation("androidx.camera:camera-extensions:$cameraxVersion")
+	implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
 	implementation("com.squareup.okhttp3:okhttp:4.10.0")
 	implementation("com.squareup.moshi:moshi:$moshiVersion")

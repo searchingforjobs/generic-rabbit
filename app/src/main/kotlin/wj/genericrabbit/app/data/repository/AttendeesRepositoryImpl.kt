@@ -27,6 +27,8 @@ class AttendeesRepositoryImpl @Inject constructor(
 		val photoFile = File(photoPath)
 		val fileRequestBody = photoFile.asRequestBody("application/octet-stream".toMediaType())
 		val fileBody = MultipartBody.Part.createFormData("file", photoFile.name, fileRequestBody)
-		return faceRecognitionApi.getAttendeesByPhoto(fileBody).map(attendeeMapper)
+		return faceRecognitionApi.getAttendeesByPhoto(fileBody).map {
+			attendeeMapper(it.attendee)
+		}
 	}
 }

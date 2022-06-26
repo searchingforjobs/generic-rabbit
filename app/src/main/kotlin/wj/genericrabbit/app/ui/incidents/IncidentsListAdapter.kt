@@ -13,7 +13,7 @@ import wj.genericrabbit.app.domain.model.Incident
 import wj.genericrabbit.app.domain.model.shortName
 import java.time.format.DateTimeFormatter
 
-class IncidentsListAdapter : ListAdapter<Incident, IncidentsListAdapter.IncidentViewHolder>(ObjectDiffCallback) {
+class IncidentsListAdapter : ListAdapter<Incident, IncidentsListAdapter.IncidentViewHolder>(IncidentDiffCallback) {
 
 	class IncidentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -21,10 +21,12 @@ class IncidentsListAdapter : ListAdapter<Incident, IncidentsListAdapter.Incident
 
 		fun bind(data: Incident) {
 			if (data.shortName.isNotBlank()) {
-				binding.textViewName.text = data.shortName
+				binding.textViewNameIncident.text = data.shortName
+			} else {
+				binding.textViewNameIncident.setText(R.string.unknown)
 			}
-			binding.textViewDate.text = data.createdAt.format(DateTimeFormatter.ofPattern("dd.MM.uuuu"))
-			binding.buttonDetails.setOnClickListener {
+			binding.textViewDateIncident.text = data.createdAt.format(DateTimeFormatter.ofPattern("dd.MM.uuuu"))
+			binding.buttonDetailsIncident.setOnClickListener {
 				val toIncidentDetails = IncidentsFragmentDirections.incidentsToDetailsFragment(data)
 				binding.root.findNavController().navigate(toIncidentDetails)
 			}
@@ -42,7 +44,7 @@ class IncidentsListAdapter : ListAdapter<Incident, IncidentsListAdapter.Incident
 	}
 }
 
-object ObjectDiffCallback : DiffUtil.ItemCallback<Incident>() {
+object IncidentDiffCallback : DiffUtil.ItemCallback<Incident>() {
 	override fun areItemsTheSame(oldItem: Incident, newItem: Incident) = oldItem.id == newItem.id
 	override fun areContentsTheSame(oldItem: Incident, newItem: Incident) = oldItem == newItem
 }
