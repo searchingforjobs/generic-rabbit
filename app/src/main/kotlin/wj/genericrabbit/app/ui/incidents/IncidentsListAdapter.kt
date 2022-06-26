@@ -20,13 +20,12 @@ class IncidentsListAdapter : ListAdapter<Incident, IncidentsListAdapter.Incident
 		private val binding = IncidentItemBinding.bind(itemView)
 
 		fun bind(data: Incident) {
-			binding.textViewName.text = data.shortName
-			if (data.shortName.isBlank()) {
-				binding.textViewName.setText(R.string.unknown)
+			if (data.shortName.isNotBlank()) {
+				binding.textViewName.text = data.shortName
 			}
 			binding.textViewDate.text = data.createdAt.format(DateTimeFormatter.ofPattern("dd.MM.uuuu"))
 			binding.buttonDetails.setOnClickListener {
-				val toIncidentDetails = IncidentsFragmentDirections.incidentsToDetailsFragment(data.id)
+				val toIncidentDetails = IncidentsFragmentDirections.incidentsToDetailsFragment(data)
 				binding.root.findNavController().navigate(toIncidentDetails)
 			}
 		}

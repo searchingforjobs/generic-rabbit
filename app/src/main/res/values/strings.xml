@@ -12,6 +12,9 @@
 	<string name="title_incidents">Incidents</string>
 	<string name="button_filter_by_date_range">Filter by date</string>
 	<string name="button_clear_date_filter">Clear filter</string>
+	<string name="title_select_dates">Select date range</string>
+	<string name="incident_no_description">No description</string>
+	<string name="incident_date_time">Visit time: %s</string>
 	<string name="title_profile">Dashboard</string>
 	<string name="title_notifications">Notifications</string>
 	<string name="title_identification_result">Identification</string>

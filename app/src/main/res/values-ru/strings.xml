@@ -12,6 +12,9 @@
 	<string name="title_incidents">Инциденты</string>
 	<string name="button_filter_by_date_range">Фильтр по дате</string>
 	<string name="button_clear_date_filter">Очистить фильтр</string>
+	<string name="title_select_dates">Выбор интервала дат</string>
+	<string name="incident_no_description">Нет описания</string>
+	<string name="incident_date_time">Время визита: %s</string>
 	<string name="title_profile">Профиль</string>
 	<string name="title_notifications">Уведомления</string>
 	<string name="title_identification_result">Идентификация</string>

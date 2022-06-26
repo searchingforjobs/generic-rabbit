@@ -29,7 +29,7 @@ class IncidentsFragment : Fragment(R.layout.fragment_incidents) {
 	private fun setupNavigation() {
 		binding.buttonIncidentsPickDate.setOnClickListener {
 			val picker = MaterialDatePicker.Builder.dateRangePicker()
-				.setTitleText("Select dates")
+				.setTitleText(R.string.title_select_dates)
 				.setSelection(
 					Pair(
 						MaterialDatePicker.thisMonthInUtcMilliseconds(),

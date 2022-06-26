@@ -1,5 +1,6 @@
 package wj.genericrabbit.app.domain.model
 
+import java.io.Serializable
 import java.time.LocalDateTime
 
 data class Incident(
@@ -11,7 +12,7 @@ data class Incident(
 	val description: String,
 	val createdAt: LocalDateTime,
 	val updatedAt: LocalDateTime = createdAt
-)
+) : Serializable
 
 val Incident.fullName: String
 	get() = "$lastName $firstName $middleName"

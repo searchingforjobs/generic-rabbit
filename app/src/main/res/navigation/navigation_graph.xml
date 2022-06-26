@@ -59,11 +59,11 @@
 
 	<dialog
 		android:id="@+id/navigation_incident_details"
-		android:name="wj.genericrabbit.app.ui.incidents.IncidentsFragment"
-		tools:layout="@layout/fragment_incidents">
+		android:name="wj.genericrabbit.app.ui.incidents.IncidentDetailsFragment"
+		tools:layout="@layout/bottom_sheet_incident_details">
 		<argument
-			android:name="incidentId"
-			app:argType="string" />
+			android:name="incident"
+			app:argType="wj.genericrabbit.app.domain.model.Incident" />
 
 	</dialog>
 
